@@ -15,8 +15,10 @@ function Employees(props) {
         console.debug(error)
       }
     }
-    fetchEmployees()
-  }, [props.departmentId])
+    if (props.expand) {
+      fetchEmployees()
+    }
+  }, [props.departmentId, props.expand])
 
   if (!props.expand) {
     return null
