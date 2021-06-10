@@ -14,18 +14,32 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #45484c;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 2vmin);
   color: white;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.report-header-left {
+  display: inline-block;
+  width: 25%;
+  font-size: medium;
+}
+
+.report-header-center {
+  width: 50%;
+}
+
+.report-header-right {
+  width: 25%;
 }
 
 table {

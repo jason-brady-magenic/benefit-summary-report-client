@@ -21,11 +21,17 @@ function ReportHeader(props) {
   const {name, logoName, address} = company ? company : {}
 
   return (
-    <div className="report-header">
-      <h1>{name} Insurance Report</h1>
-      <p>Date: {new Date().toLocaleString() + ''}</p>
-      <img className="report-header-logo" alt="company logo" src={`http://localhost:3001/images/${logoName}`} />
-      <Address address={address}/>
+    <div className="App-header">
+      <div className="report-header-left">
+        <img alt="company logo" src={`http://localhost:3001/images/${logoName}`} />
+        <Address address={address}/>
+      </div>
+      <div className="report-header-center">
+        <h2>{name} Insurance Report</h2>
+      </div>
+      <div className="report-header-right">
+        <p >{new Date().toLocaleString() + ''}</p>
+      </div>
     </div>
   )
 }
