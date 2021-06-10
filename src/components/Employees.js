@@ -2,6 +2,7 @@ import EmployeeDetails from './EmployeeDetails'
 import {useEffect, useState} from 'react'
 
 function Employees(props) {
+
   const [employees, setEmployees] = useState([])
 
   useEffect(() => {
@@ -9,17 +10,21 @@ function Employees(props) {
       try {
         const response = await fetch(`/employees/department/${props.departmentId}`)
         const employees = await response.json()
-        setDepartments(employees)
+        setEmployees(employees)
       } catch (error) {
         console.debug(error)
       }
     }
-    fetchDepartments()
+    fetchEmployees()
   }, [props.departmentId])
+
+  if (!props.expand) {
+    return null
+  }
 
   return (
     <div>
-      {Employees.map(employee => (
+      {employees.map(employee => (
         <EmployeeDetails key={employee.id} {...employee} />
       ))}
     </div>
