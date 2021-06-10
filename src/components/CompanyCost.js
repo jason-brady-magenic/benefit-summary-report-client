@@ -22,16 +22,18 @@ function CompanyCost(props) {
     <div>
       <table>
         <caption>Insurance Cost for the Company</caption>
-        <tr>
-          <th>Total Cost of Insurance</th>
-          <th>Total Paid by Employees</th>
-          <th>Total Paid by Company</th>
-        </tr>
-        <tr>
-          <td>{totalCostOfInsurance}</td>
-          <td>{totalPaidByEmployees}</td>
-          <td>{totalPaidByCompany}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Total Cost of Insurance</th>
+            <th>Total Paid by Employees</th>
+            <th>Total Paid by Company</th>
+          </tr>
+          <tr>
+            <td>{totalCostOfInsurance}</td>
+            <td>{totalPaidByEmployees}</td>
+            <td>{totalPaidByCompany}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   )

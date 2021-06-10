@@ -1,7 +1,9 @@
+import Employees from './Employees'
 import { useEffect, useState } from 'react'
 
 function DepartmentCost(props) {
   const [insuranceCosts, setInsuranceCosts] = useState({})
+  const [expand, setExpand] = useState(false)
 
   useEffect(() => {
     async function fetchDepartmentCosts() {
@@ -22,17 +24,20 @@ function DepartmentCost(props) {
     <div>
       <table>
         <caption>Insurance Cost for the {props.name} Department</caption>
-        <tr>
-          <th>Total Cost of Insurance</th>
-          <th>Total Paid by Employees</th>
-          <th>Total Paid by Department</th>
-        </tr>
-        <tr>
-          <td>{totalCostOfInsurance}</td>
-          <td>{totalPaidByEmployees}</td>
-          <td>{totalPaidByDepartment}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Total Cost of Insurance</th>
+            <th>Total Paid by Employees</th>
+            <th>Total Paid by Department</th>
+          </tr>
+          <tr>
+            <td>{totalCostOfInsurance}</td>
+            <td>{totalPaidByEmployees}</td>
+            <td>{totalPaidByDepartment}</td>
+          </tr>
+        </tbody>
       </table>
+      <Employees expand={expand}/>
     </div>
   )
 }
