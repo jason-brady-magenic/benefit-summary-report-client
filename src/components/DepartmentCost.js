@@ -19,7 +19,7 @@ function DepartmentCost(props) {
   }, [props.id])
 
   const {totalCostOfInsurance, totalPaidByDepartment, totalPaidByEmployees} = insuranceCosts
-
+  const employeeProps = {expand, departmentId: props.id}
   return (
     <div>
       <table>
@@ -37,7 +37,10 @@ function DepartmentCost(props) {
           </tr>
         </tbody>
       </table>
-      <Employees expand={expand}/>
+      <Employees {...employeeProps}/>
+      {expand
+      ? <button onClick={() => setExpand(false)}>- Employees</button>
+      : <button onClick={() => setExpand(true)}>+ Employees</button>}
     </div>
   )
 }
