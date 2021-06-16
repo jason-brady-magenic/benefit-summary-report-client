@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <select id="company" value={companyId} onChange={e => setCompanyId(e.target.value)}>
-        {companies.map(company => (
+        {companies && companies.map(company => (
           <option key={company.id} value={company.id}>{company.name}</option>
         ))}
       </select>
